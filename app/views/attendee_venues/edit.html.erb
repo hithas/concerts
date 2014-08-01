@@ -1,0 +1,25 @@
+<h1>Editing Attendee Venue #<%= @attendee_venue.id %></h1>
+
+<form action="/attendee_venues/<%= @attendee_venue.id %>/update">
+  <div>
+    <label for="attendee_id">attendee_id</label><br />
+    <input id="attendee_id" name="attendee_id" value="<%= @attendee_venue.attendee_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="venue_id">venue_id</label><br />
+    <input id="venue_id" name="venue_id" value="<%= @attendee_venue.venue_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="date">date</label><br />
+    <input id="date" name="date" value="<%= @attendee_venue.date  %>" type="text" />
+  </div>
+  <div>
+    <label for="time">time</label><br />
+    <input id="time" name="time" value="<%= @attendee_venue.time  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

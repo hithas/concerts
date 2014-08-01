@@ -1,0 +1,21 @@
+<h1>Band Venue #<%= @band_venue.id %></h1>
+
+<div>
+  <strong>Band</strong>:<br />
+  <p><%= @band_venue.band_id %></p>
+</div>
+<div>
+  <strong>Venue</strong>:<br />
+  <p><%= @band_venue.venue_id %></p>
+</div>
+<div>
+  <strong>Date</strong>:<br />
+  <p><%= @band_venue.date %></p>
+</div>
+<div>
+  <strong>Time</strong>:<br />
+  <p><%= @band_venue.time %></p>
+</div>
+
+<a href="/band_venues/<%= @band_venue.id %>/edit">Edit</a> |
+<a href="/band_venues/<%= @band_venue.id %>/destroy">Destroy</a>

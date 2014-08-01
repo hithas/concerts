@@ -1,0 +1,17 @@
+<h1>Editing Venue #<%= @venue.id %></h1>
+
+<form action="/venues/<%= @venue.id %>/update">
+  <div>
+    <label for="country">country</label><br />
+    <input id="country" name="country" value="<%= @venue.country  %>" type="text" />
+  </div>
+  <div>
+    <label for="city">city</label><br />
+    <input id="city" name="city" value="<%= @venue.city  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

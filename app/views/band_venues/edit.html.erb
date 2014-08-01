@@ -1,0 +1,25 @@
+<h1>Editing Band Venue #<%= @band_venue.id %></h1>
+
+<form action="/band_venues/<%= @band_venue.id %>/update">
+  <div>
+    <label for="band_id">band_id</label><br />
+    <input id="band_id" name="band_id" value="<%= @band_venue.band_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="venue_id">venue_id</label><br />
+    <input id="venue_id" name="venue_id" value="<%= @band_venue.venue_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="date">date</label><br />
+    <input id="date" name="date" value="<%= @band_venue.date  %>" type="text" />
+  </div>
+  <div>
+    <label for="time">time</label><br />
+    <input id="time" name="time" value="<%= @band_venue.time  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

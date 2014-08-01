@@ -1,0 +1,29 @@
+<h1>Venues</h1>
+
+<p><a href="/new_venue">Add a New Venue</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @venues.each do |venue| %>
+    <tr>
+          <td><%= venue.country %></td>
+          <td><%= venue.city %></td>
+          <td><a href="/venues/<%= venue.id %>">Show</a>
+        </td>
+      <td><a href="/venues/<%= venue.id %>/edit">Edit</a></td>
+      <td><a href="/venues/<%= venue.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

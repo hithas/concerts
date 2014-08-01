@@ -1,0 +1,33 @@
+<h1>Members</h1>
+
+<p><a href="/new_member">Add a New Member</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Picture</th>
+      <th>Band</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @members.each do |member| %>
+    <tr>
+          <td><%= member.name %></td>
+          <td><%= member.age %></td>
+          <td><%= member.picture %></td>
+          <td><%= member.band_id %></td>
+          <td><a href="/members/<%= member.id %>">Show</a>
+        </td>
+      <td><a href="/members/<%= member.id %>/edit">Edit</a></td>
+      <td><a href="/members/<%= member.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

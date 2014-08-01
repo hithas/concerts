@@ -1,0 +1,21 @@
+<h1>Member #<%= @member.id %></h1>
+
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @member.name %></p>
+</div>
+<div>
+  <strong>Age</strong>:<br />
+  <p><%= @member.age %></p>
+</div>
+<div>
+  <strong>Picture</strong>:<br />
+  <p><%= @member.picture %></p>
+</div>
+<div>
+  <strong>Band</strong>:<br />
+  <p><%= @member.band_id %></p>
+</div>
+
+<a href="/members/<%= @member.id %>/edit">Edit</a> |
+<a href="/members/<%= @member.id %>/destroy">Destroy</a>

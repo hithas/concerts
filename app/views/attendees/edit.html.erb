@@ -1,0 +1,13 @@
+<h1>Editing Attendee #<%= @attendee.id %></h1>
+
+<form action="/attendees/<%= @attendee.id %>/update">
+  <div>
+    <label for="name">name</label><br />
+    <input id="name" name="name" value="<%= @attendee.name  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

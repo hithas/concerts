@@ -1,0 +1,30 @@
+<h1>Band #<%= @band.id %></h1>
+
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @band.name %></p>
+</div>
+<div>
+  <strong>Genre</strong>:<br />
+  <p><%= @band.genre %></p>
+</div>
+<div>
+  <strong>Nom</strong>:<br />
+  <p><%= @band.nom %></p>
+</div>
+<div>
+  <strong>Venues</strong>:<br />
+  <% BandVenue.where(band_id: @band.id).each do |bv| %>
+  <p><%= Venue.find_by(id: bv.venue_id).city %>, <%= Venue.find_by(id: bv.venue_id).country %></p>
+  <%end%>
+</div>
+
+<form action = "/bands/<%= @band.id %>/add_venue">
+  <input name="venue_id" type='integer'>
+  <input name="date" type='date'>
+  <input name="time" type='time'>
+  <input type="submit">
+</form>
+
+<a href="/bands/<%= @band.id %>/edit">Edit</a> |
+<a href="/bands/<%= @band.id %>/destroy">Destroy</a>

@@ -1,0 +1,9 @@
+<h1>Attendee #<%= @attendee.id %></h1>
+
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @attendee.name %></p>
+</div>
+
+<a href="/attendees/<%= @attendee.id %>/edit">Edit</a> |
+<a href="/attendees/<%= @attendee.id %>/destroy">Destroy</a>

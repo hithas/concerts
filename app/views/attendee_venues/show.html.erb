@@ -1,0 +1,21 @@
+<h1>Attendee Venue #<%= @attendee_venue.id %></h1>
+
+<div>
+  <strong>Attendee</strong>:<br />
+  <p><%= @attendee_venue.attendee_id %></p>
+</div>
+<div>
+  <strong>Venue</strong>:<br />
+  <p><%= @attendee_venue.venue_id %></p>
+</div>
+<div>
+  <strong>Date</strong>:<br />
+  <p><%= @attendee_venue.date %></p>
+</div>
+<div>
+  <strong>Time</strong>:<br />
+  <p><%= @attendee_venue.time %></p>
+</div>
+
+<a href="/attendee_venues/<%= @attendee_venue.id %>/edit">Edit</a> |
+<a href="/attendee_venues/<%= @attendee_venue.id %>/destroy">Destroy</a>

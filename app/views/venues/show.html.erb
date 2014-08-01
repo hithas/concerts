@@ -1,0 +1,13 @@
+<h1>Venue #<%= @venue.id %></h1>
+
+<div>
+  <strong>Country</strong>:<br />
+  <p><%= @venue.country %></p>
+</div>
+<div>
+  <strong>City</strong>:<br />
+  <p><%= @venue.city %></p>
+</div>
+
+<a href="/venues/<%= @venue.id %>/edit">Edit</a> |
+<a href="/venues/<%= @venue.id %>/destroy">Destroy</a>

@@ -1,0 +1,33 @@
+<h1>Band venues</h1>
+
+<p><a href="/new_band_venue">Add a New Band Venue</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Band</th>
+      <th>Venue</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @band_venues.each do |band_venue| %>
+    <tr>
+          <td><%= band_venue.band_id %></td>
+          <td><%= band_venue.venue_id %></td>
+          <td><%= band_venue.date %></td>
+          <td><%= band_venue.time %></td>
+          <td><a href="/band_venues/<%= band_venue.id %>">Show</a>
+        </td>
+      <td><a href="/band_venues/<%= band_venue.id %>/edit">Edit</a></td>
+      <td><a href="/band_venues/<%= band_venue.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
