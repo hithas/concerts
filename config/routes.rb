@@ -96,8 +96,10 @@ Rails.application.routes.draw do
   # UPDATE
   get '/attendees/:id/edit' => 'attendees#edit'
   get '/attendees/:id/update' => 'attendees#update'
+  get '/attendees/:id/add_venue' => 'attendees#add_venue'
 
   # DELETE
+  get '/attendees/:id/delete_venue/:av_id' => 'attendees#delete_venue'
   get '/attendees/:id/destroy' => 'attendees#destroy'
   #------------------------------
 
@@ -133,6 +135,7 @@ Rails.application.routes.draw do
   get '/bands/:id/add_venue' => 'bands#add_venue'
 
   # DELETE
+  get '/bands/:id/delete_venue/:bv_id' => 'bands#delete_venue'
   get '/bands/:id/destroy' => 'bands#destroy'
   #------------------------------
 

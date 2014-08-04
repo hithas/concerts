@@ -1,30 +1,35 @@
-<h1>Band #<%= @band.id %></h1>
+<h1><%= @band.name %> <small><%= @band.genre %></small></h1>
 
 <div>
-  <strong>Name</strong>:<br />
-  <p><%= @band.name %></p>
+  <h3><%= @band.nom %> members:</h3>
+  <ul>
+    <% Member.where(band_id: @band.id). each do |member| %>
+      <li> <a href='/members/<%= member.id %>'><%= member.name %> </a></li>
+    <% end %>
+  </ul>
+  <a href='/new_member'> Add a new member </a>
 </div>
 <div>
-  <strong>Genre</strong>:<br />
-  <p><%= @band.genre %></p>
-</div>
-<div>
-  <strong>Nom</strong>:<br />
-  <p><%= @band.nom %></p>
-</div>
-<div>
-  <strong>Venues</strong>:<br />
-  <% BandVenue.where(band_id: @band.id).each do |bv| %>
-  <p><%= Venue.find_by(id: bv.venue_id).city %>, <%= Venue.find_by(id: bv.venue_id).country %></p>
-  <%end%>
+  <h3>Venues:</h3>
+  <ul>
+    <% BandVenue.where(band_id: @band.id).each do |bv| %>
+    <li><%= Venue.find_by(id: bv.venue_id).city %>, <%= Venue.find_by(id: bv.venue_id).country %> : <%= bv.date%>, <%= bv.time%> <a href="/bands/<%= @band.id %>/delete_venue/<%= bv.id%>"> Delete </a></li>
+    <%end%>
+  </ul>
 </div>
 
+<strong> Add Venue </strong>
 <form action = "/bands/<%= @band.id %>/add_venue">
-  <input name="venue_id" type='integer'>
-  <input name="date" type='date'>
-  <input name="time" type='time'>
+<select name="venue_id">
+  <% Venue.all.each do |venue| %>
+  <option value="<%= venue.id%>"><%= venue.city%>, <%= venue.country%> </option>
+  <% end %>
+</select>
+  <input name="date" type='date' placeholder='date'>
+  <input name="time" type='time' placeholder='time'>
   <input type="submit">
 </form>
 
 <a href="/bands/<%= @band.id %>/edit">Edit</a> |
 <a href="/bands/<%= @band.id %>/destroy">Destroy</a>
+

@@ -5,5 +5,28 @@
   <p><%= @attendee.name %></p>
 </div>
 
+<strong> Venues </strong>
+<ul>
+  <% @attendee_venues.each do |av| %>
+  <% bv = BandVenue.find_by(id: av.venue_id) %>
+  <% venue = Venue.find_by(id: bv.venue_id) %>
+  <li>  <%=Band.find_by(id: bv.band_id).name %> performing at <%= venue.city %>, <%= venue.country %> at <%= bv.date %> <%= bv.date %> <%= bv.time %> <a href="/attendees/<%= @attendee.id %>/delete_venue/<%= av.id%>"><small> Delete </small></a></li>
+<% end %>
+</ul>
+
 <a href="/attendees/<%= @attendee.id %>/edit">Edit</a> |
 <a href="/attendees/<%= @attendee.id %>/destroy">Destroy</a>
+
+<h2> Add a new venue </h2>
+<form action = "/attendees/<%= @attendee.id %>/add_venue">
+  <select name="bv_id">
+    <% BandVenue.all.each do |bv| %>
+    <% venue = Venue.find_by(id: bv.venue_id) %>
+      <% if Band.find_by(id: bv.band_id) %>
+        <option value="<%=bv.id%>"> <%=Band.find_by(id: bv.band_id).name%> performing at <%=venue.city%>, <%=venue.country%> at <%=bv.date%>, <%=bv.time%>,
+        </option>
+    <% end %>
+    <% end %>
+  </select>
+  <input type="submit">
+</form>

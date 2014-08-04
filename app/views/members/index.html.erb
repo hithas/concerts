@@ -2,32 +2,12 @@
 
 <p><a href="/new_member">Add a New Member</a></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Picture</th>
-      <th>Band</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
   <% @members.each do |member| %>
-    <tr>
-          <td><%= member.name %></td>
-          <td><%= member.age %></td>
-          <td><%= member.picture %></td>
-          <td><%= member.band_id %></td>
-          <td><a href="/members/<%= member.id %>">Show</a>
-        </td>
-      <td><a href="/members/<%= member.id %>/edit">Edit</a></td>
-      <td><a href="/members/<%= member.id %>/destroy">Destroy</a></td>
-    </tr>
+<h4><%= member.name %> <small><%if Band.find_by(id: member.band_id)%> <%=Band.find_by(id: member.band_id).name %><%end%></small></h4>
+
+<a href="/members/<%= member.id %>">Show</a> |
+<a href="/members/<%= member.id %>/edit">Edit</a> | <a href="/members/<%= member.id %>/destroy">Destroy</a>
   <% end %>
-  </tbody>
-</table>
+
+
 

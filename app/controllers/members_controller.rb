@@ -17,6 +17,7 @@ class MembersController < ApplicationController
     @member.age = params[:age]
     @member.picture = params[:picture]
     @member.band_id = params[:band_id]
+    
 
     if @member.save
       redirect_to "/members/#{ @member.id }"

@@ -14,8 +14,12 @@
     <input id="picture" name="picture" type="text" />
   </div>
   <div>
-    <label for="band_id">band_id</label><br />
-    <input id="band_id" name="band_id" type="text" />
+        <select name="band_id" id="band_id">
+          <% Band.all.each do |band| %>
+          <option value="<%= band.id%>"><%= band.name%> </option>
+          <% end %>
+        </select>
+    
   </div>
   <div>
     <input type="submit">

@@ -2,30 +2,10 @@
 
 <p><a href="/new_band">Add a New Band</a></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Genre</th>
-      <th>Nom</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
   <% @bands.each do |band| %>
-    <tr>
-          <td><%= band.name %></td>
-          <td><%= band.genre %></td>
-          <td><%= band.nom %></td>
-          <td><a href="/bands/<%= band.id %>">Show</a>
-        </td>
-      <td><a href="/bands/<%= band.id %>/edit">Edit</a></td>
-      <td><a href="/bands/<%= band.id %>/destroy">Destroy</a></td>
-    </tr>
+<h3><%= band.name %> <small><%= band.genre %></small></h3>
+          <a href="/bands/<%= band.id %>">Show</a> | <a href="/bands/<%= band.id %>/edit">Edit</a> | <a href="/bands/<%= band.id %>/destroy">Destroy</a>
+
   <% end %>
-  </tbody>
-</table>
+
 

@@ -2,26 +2,12 @@
 
 <p><a href="/new_attendee">Add a New Attendee</a></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
   <% @attendees.each do |attendee| %>
-    <tr>
-          <td><%= attendee.name %></td>
-          <td><a href="/attendees/<%= attendee.id %>">Show</a>
-        </td>
-      <td><a href="/attendees/<%= attendee.id %>/edit">Edit</a></td>
-      <td><a href="/attendees/<%= attendee.id %>/destroy">Destroy</a></td>
-    </tr>
+          <h3><%= attendee.name %></h3>
+         <a href="/attendees/<%= attendee.id %>">Show</a> | 
+        
+      <a href="/attendees/<%= attendee.id %>/edit">Edit</a> | 
+      <a href="/attendees/<%= attendee.id %>/destroy">Destroy</a>
   <% end %>
-  </tbody>
-</table>
+
 
